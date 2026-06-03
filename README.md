@@ -1,19 +1,9 @@
-# Club Deportivo Ricardo Méndez - Web Negro y Dorado
+# Club Deportivo Ricardo Méndez - Diseño corregido
 
-Versión mejorada con:
-- Logo incorporado
-- Colores negro y dorado
-- Animaciones
-- Inicio profesional
-- Noticias
-- Galería
-- Fixture
-- Tabla de posiciones
-- Registro de socios
-- Estadísticas
-
-Archivos listos para GitHub / Vercel:
-- index.html
-- styles.css
-- script.js
-- logo_ricardo_mendez.png
+Correcciones:
+- Diseño más limpio y proporcionado
+- Negro y dorado elegante
+- Logo integrado sin verse gigante ni cortado
+- Menos saturación visual
+- Mejor responsividad
+- Animaciones suaves

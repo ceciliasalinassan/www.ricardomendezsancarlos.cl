@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Club Deportivo Ricardo Méndez</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="gold-particles"></div>
-
   <aside class="sidebar">
-    <img src="logo_ricardo_mendez.png" class="club-logo" alt="Logo Club Deportivo Ricardo Méndez">
+    <div class="logoBox">
+      <img src="logo_ricardo_mendez.png" alt="Logo Club Deportivo Ricardo Méndez" />
+    </div>
     <h2>Club Deportivo<br><span>Ricardo Méndez</span></h2>
-    <p class="since">Desde 1932</p>
+    <p>Fundado el 12 de agosto de 1932</p>
 
     <nav>
       <a class="active" href="#inicio">Inicio</a>
@@ -22,85 +22,81 @@
       <a href="#posiciones">Posiciones</a>
       <a href="#socios">Socios</a>
       <a href="#estadisticas">Estadísticas</a>
-      <a href="#contacto">Contacto</a>
     </nav>
   </aside>
 
-  <main class="content">
-    <header id="inicio" class="hero">
-      <div class="topbar">
-        <span>Pasión</span><b>•</b><span>Disciplina</span><b>•</b><span>Respeto</span><b>•</b><span>Unión</span>
+  <main>
+    <section id="inicio" class="hero">
+      <div class="topline">
+        <span>Pasión</span><i></i><span>Disciplina</span><i></i><span>Respeto</span><i></i><span>Unión</span>
       </div>
 
-      <section class="hero-grid">
-        <div class="hero-text">
-          <span class="badge">Portal Oficial del Club</span>
-          <h1>Pasión, historia<br><strong>y corazón</strong></h1>
-          <p>Una plataforma moderna para noticias, socios, fixture, estadísticas y series en competencia.</p>
-          <div class="buttons">
-            <a href="#socios" class="btn gold">Hazte socio</a>
-            <a href="#fixture" class="btn outline">Ver fixture</a>
+      <div class="heroContent">
+        <div class="copy">
+          <span class="tag">Portal oficial del club</span>
+          <h1>Historia,<br><strong>pasión</strong><br>y corazón</h1>
+          <p>Noticias, galería, fixture, socios, tablas de posiciones y estadísticas en una plataforma moderna para el club.</p>
+          <div class="actions">
+            <a href="#socios" class="btn primary">Hazte socio</a>
+            <a href="#fixture" class="btn secondary">Ver fixture</a>
           </div>
         </div>
 
-        <div class="hero-logo-card">
-          <img src="logo_ricardo_mendez.png" alt="Logo Club">
+        <div class="crestCard">
+          <img src="logo_ricardo_mendez.png" alt="Escudo Ricardo Méndez" />
         </div>
 
-        <div class="next-match">
+        <div class="matchCard">
           <h3>Próximo partido</h3>
-          <div class="match">
+          <div class="versus">
             <div>
-              <img src="logo_ricardo_mendez.png">
-              <p>Ricardo Méndez</p>
+              <img src="logo_ricardo_mendez.png" alt="">
+              <b>Ricardo Méndez</b>
             </div>
             <strong>VS</strong>
             <div class="rival">AJ</div>
           </div>
-          <p class="match-info">Sábado 25 Mayo · 15:00 hrs · Estadio Teatro</p>
-          <a href="#fixture" class="mini-btn">Ver detalles</a>
+          <p>Sábado 25 Mayo · 15:00 hrs</p>
+          <button>Ver detalles</button>
         </div>
-      </section>
-    </header>
+      </div>
+    </section>
 
-    <section class="metrics">
-      <article><span>Socios activos</span><strong data-count="246">0</strong></article>
-      <article><span>Goles temporada</span><strong data-count="48">0</strong></article>
-      <article><span>Victorias</span><strong data-count="15">0</strong></article>
-      <article><span>Series</span><strong data-count="6">0</strong></article>
+    <section class="quickStats">
+      <article><span>Socios activos</span><b data-count="246">0</b></article>
+      <article><span>Goles temporada</span><b data-count="48">0</b></article>
+      <article><span>Victorias</span><b data-count="15">0</b></article>
+      <article><span>Series</span><b data-count="6">0</b></article>
     </section>
 
     <section id="noticias" class="section">
-      <div class="section-title">
+      <div class="title">
         <h2>Últimas noticias</h2>
-        <a href="#">Ver todas →</a>
+        <a>Ver todas →</a>
       </div>
-      <div class="cards">
+      <div class="grid three">
         <article class="card">
-          <div class="card-img"></div>
+          <div class="img img1"></div>
           <h3>Gran victoria en casa</h3>
-          <p>El equipo logró una remontada épica y suma puntos importantes para la temporada.</p>
-          <small>20 Mayo, 2026</small>
+          <p>El equipo suma tres puntos importantes y sigue firme en la competencia.</p>
         </article>
         <article class="card">
-          <div class="card-img second"></div>
-          <h3>Nuevo refuerzo</h3>
-          <p>Damos la bienvenida a un nuevo jugador que se integra al plantel principal.</p>
-          <small>18 Mayo, 2026</small>
-        </article>
-        <article class="card">
-          <div class="card-img third"></div>
+          <div class="img img2"></div>
           <h3>Entrenamiento intenso</h3>
-          <p>Las series se preparan con todo para los próximos desafíos deportivos.</p>
-          <small>15 Mayo, 2026</small>
+          <p>Las series se preparan para los próximos desafíos deportivos.</p>
+        </article>
+        <article class="card">
+          <div class="img img3"></div>
+          <h3>Campaña de socios</h3>
+          <p>Únete a la familia Ricardo Méndez y apoya al club.</p>
         </article>
       </div>
     </section>
 
     <section id="galeria" class="section">
-      <div class="section-title">
-        <h2>Galería destacada</h2>
-        <a href="#">Ver galería →</a>
+      <div class="title">
+        <h2>Galería</h2>
+        <a>Ver galería →</a>
       </div>
       <div class="gallery">
         <div>Partidos</div>
@@ -111,15 +107,14 @@
     </section>
 
     <section id="fixture" class="section">
-      <div class="section-title">
-        <h2>Calendario de partidos</h2>
-        <a href="#">Fixture completo →</a>
+      <div class="title">
+        <h2>Fixture</h2>
       </div>
-      <div class="table-card">
+      <div class="tableBox">
         <table>
           <thead><tr><th>Fecha</th><th>Serie</th><th>Rival</th><th>Cancha</th><th>Hora</th></tr></thead>
           <tbody>
-            <tr><td>25/05/2026</td><td>Primera A</td><td>Atlético Juventud</td><td>Local</td><td>15:00</td></tr>
+            <tr><td>25/05/2026</td><td>Primera</td><td>Atlético Juventud</td><td>Local</td><td>15:00</td></tr>
             <tr><td>01/06/2026</td><td>Senior</td><td>Deportivo Unión</td><td>Visita</td><td>17:00</td></tr>
             <tr><td>08/06/2026</td><td>Juvenil</td><td>Club San José</td><td>Local</td><td>12:00</td></tr>
           </tbody>
@@ -128,11 +123,10 @@
     </section>
 
     <section id="posiciones" class="section">
-      <div class="section-title">
+      <div class="title">
         <h2>Tabla de posiciones</h2>
-        <a href="#">Ver completa →</a>
       </div>
-      <div class="table-card">
+      <div class="tableBox">
         <table>
           <thead><tr><th>Pos.</th><th>Equipo</th><th>PJ</th><th>PG</th><th>PE</th><th>PP</th><th>DG</th><th>PTS</th></tr></thead>
           <tbody>
@@ -146,17 +140,16 @@
 
     <section id="socios" class="section socios">
       <div>
-        <h2>Registro de socios</h2>
-        <p>Formulario inicial para inscripción de socios, jugadores, apoderados y dirigentes.</p>
+        <div class="title"><h2>Registro de socios</h2></div>
         <form>
-          <input placeholder="Nombre completo">
-          <input placeholder="RUT">
-          <input placeholder="Teléfono">
-          <select><option>Socio activo</option><option>Jugador</option><option>Apoderado</option><option>Dirigente</option></select>
+          <input placeholder="Nombre completo" />
+          <input placeholder="RUT" />
+          <input placeholder="Teléfono" />
+          <select><option>Socio activo</option><option>Jugador</option><option>Apoderado</option></select>
           <button type="button">Guardar socio</button>
         </form>
       </div>
-      <div class="gold-panel">
+      <div class="panel">
         <h3>Estado de socios</h3>
         <p><b>Al día:</b> 198</p>
         <p><b>Pendientes:</b> 48</p>
@@ -165,21 +158,14 @@
     </section>
 
     <section id="estadisticas" class="section">
-      <div class="section-title">
-        <h2>Estadísticas del equipo</h2>
-      </div>
-      <div class="stats-bars">
-        <div><span style="height:80%"></span><p>Victorias</p></div>
+      <div class="title"><h2>Estadísticas</h2></div>
+      <div class="bars">
+        <div><span style="height:85%"></span><p>Victorias</p></div>
         <div><span style="height:35%"></span><p>Empates</p></div>
         <div><span style="height:20%"></span><p>Derrotas</p></div>
         <div><span style="height:95%"></span><p>Goles</p></div>
-        <div><span style="height:70%"></span><p>Rendimiento</p></div>
       </div>
     </section>
-
-    <footer id="contacto">
-      <p>Club Deportivo Ricardo Méndez · Negro & Dorado · Plataforma Web Futurista</p>
-    </footer>
   </main>
 
   <script src="script.js"></script>

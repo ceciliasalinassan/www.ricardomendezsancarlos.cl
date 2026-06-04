@@ -1,188 +1,84 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Club Deportivo Ricardo Méndez</title>
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Club Deportivo Ricardo Méndez</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="top">
-    <div class="brand">
-      <img src="logo_ricardo_mendez.png" alt="Logo Club Deportivo Ricardo Méndez">
-      <div>
-        <strong>Club Deportivo Ricardo Méndez</strong>
-        <span>Fundado el 12 de agosto de 1932</span>
-      </div>
-    </div>
-
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#noticias">Noticias</a>
-      <a href="#galeria">Galería</a>
-      <a href="#fixture">Fixture</a>
-      <a href="#posiciones">Posiciones</a>
-      <a href="#socios">Socios</a>
-      <button id="openAdmin">Administrador</button>
-    </nav>
-  </header>
-
-  <main>
-    <section id="inicio" class="hero">
-      <div class="heroText">
-        <span class="eyebrow">Portal oficial del club</span>
-        <h1>Una familia, una historia, una pasión.</h1>
-        <p>Noticias, fotografías, videos, partidos, socios, estadísticas y series en competencia en una plataforma ordenada y profesional.</p>
-        <div class="heroActions">
-          <a href="#noticias">Ver noticias</a>
-          <a href="#socios" class="outline">Hazte socio</a>
-        </div>
-      </div>
-
-      <aside class="matchCard">
-        <span>Próximo partido</span>
-        <div class="versus">
-          <img src="logo_ricardo_mendez.png" alt="">
-          <b>VS</b>
-          <div>Rival</div>
-        </div>
-        <p id="nextMatchText">Ricardo Méndez vs Atlético Juventud · 25/05 · 15:00 hrs</p>
-      </aside>
-    </section>
-
-    <section class="dashboard">
-      <article><span>Socios activos</span><b id="sociosCount">246</b></article>
-      <article><span>Goles temporada</span><b id="golesCount">48</b></article>
-      <article><span>Victorias</span><b id="victoriasCount">15</b></article>
-      <article><span>Series</span><b id="seriesCount">6</b></article>
-    </section>
-
-    <section id="noticias" class="section">
-      <div class="sectionHead">
-        <h2>Noticias</h2>
-        <p>Información publicada por administración.</p>
-      </div>
-      <div id="newsGrid" class="grid"></div>
-    </section>
-
-    <section id="galeria" class="section">
-      <div class="sectionHead">
-        <h2>Galería de fotos y videos</h2>
-        <p>Material autorizado para visualización pública.</p>
-      </div>
-      <div id="galleryGrid" class="gallery"></div>
-    </section>
-
-    <section id="fixture" class="section">
-      <div class="sectionHead">
-        <h2>Calendario de partidos</h2>
-        <p>Fixture por serie y competencia.</p>
-      </div>
-      <div class="tableBox">
-        <table>
-          <thead><tr><th>Fecha</th><th>Serie</th><th>Partido</th><th>Cancha</th><th>Hora</th></tr></thead>
-          <tbody id="fixtureRows"></tbody>
-        </table>
-      </div>
-    </section>
-
-    <section id="posiciones" class="section">
-      <div class="sectionHead">
-        <h2>Tabla de posiciones</h2>
-        <p>Series en competencia.</p>
-      </div>
-      <div class="tableBox">
-        <table>
-          <thead><tr><th>Pos.</th><th>Equipo</th><th>PJ</th><th>PG</th><th>PE</th><th>PP</th><th>DG</th><th>PTS</th></tr></thead>
-          <tbody id="positionRows"></tbody>
-        </table>
-      </div>
-    </section>
-
-    <section id="socios" class="section split">
-      <div>
-        <div class="sectionHead">
-          <h2>Solicitud de socio</h2>
-          <p>El público puede enviar una solicitud. El administrador debe aprobarla antes de registrarla.</p>
-        </div>
-
-        <form id="memberRequestForm" class="formCard">
-          <input id="memberName" placeholder="Nombre completo" required>
-          <input id="memberRut" placeholder="RUT" required>
-          <input id="memberPhone" placeholder="Teléfono" required>
-          <select id="memberType">
-            <option>Socio activo</option>
-            <option>Jugador</option>
-            <option>Apoderado</option>
-            <option>Dirigente</option>
-          </select>
-          <button>Enviar solicitud</button>
-        </form>
-      </div>
-
-      <div class="infoCard">
-        <h3>Control administrativo</h3>
-        <p>Las noticias, fotos, videos, fixture y socios quedan pendientes hasta aprobación del administrador.</p>
-        <p>Para uso real online se debe conectar a Supabase.</p>
-      </div>
-    </section>
-  </main>
-
-  <div id="adminModal" class="modal">
-    <div class="modalBox">
-      <button class="close" id="closeAdmin">×</button>
-
-      <div id="loginPanel">
-        <h2>Acceso administrador</h2>
-        <p>Solo una persona autorizada puede publicar o aprobar información.</p>
-        <input id="adminPassword" type="password" placeholder="Clave administrador">
-        <button id="loginBtn">Ingresar</button>
-        <small>Clave demo: admin1932</small>
-      </div>
-
-      <div id="adminPanel" class="hidden">
-        <h2>Panel administrador</h2>
-
-        <div class="adminTabs">
-          <button data-tab="tabNoticias" class="tab active">Noticias</button>
-          <button data-tab="tabGaleria" class="tab">Fotos/Videos</button>
-          <button data-tab="tabFixture" class="tab">Fixture</button>
-          <button data-tab="tabSolicitudes" class="tab">Solicitudes</button>
-        </div>
-
-        <section id="tabNoticias" class="tabContent">
-          <h3>Cargar noticia</h3>
-          <input id="newsTitle" placeholder="Título">
-          <textarea id="newsText" placeholder="Información de la noticia"></textarea>
-          <button id="addNews">Publicar noticia</button>
-        </section>
-
-        <section id="tabGaleria" class="tabContent hidden">
-          <h3>Cargar foto o video</h3>
-          <input id="mediaTitle" placeholder="Título">
-          <input id="mediaUrl" placeholder="URL de imagen o video">
-          <select id="mediaType"><option>Foto</option><option>Video</option></select>
-          <button id="addMedia">Publicar en galería</button>
-        </section>
-
-        <section id="tabFixture" class="tabContent hidden">
-          <h3>Agregar partido</h3>
-          <input id="fxDate" placeholder="Fecha">
-          <input id="fxSerie" placeholder="Serie">
-          <input id="fxGame" placeholder="Partido">
-          <input id="fxPlace" placeholder="Cancha">
-          <input id="fxHour" placeholder="Hora">
-          <button id="addFixture">Guardar partido</button>
-        </section>
-
-        <section id="tabSolicitudes" class="tabContent hidden">
-          <h3>Solicitudes pendientes</h3>
-          <div id="requestList"></div>
-        </section>
-      </div>
-    </div>
+<div class="stadiumLights"></div><div class="particles"></div>
+<header class="top">
+  <div class="brand"><img src="logo_ricardo_mendez_transparente.png"><div><strong>Club Deportivo Ricardo Méndez</strong><span>Desde 1932</span></div></div>
+  <nav>
+    <a href="#inicio">Inicio</a><a href="#series">Series</a><a href="#noticias">Noticias</a><a href="#galeria">Galería</a><a href="#fixture">Fixture</a><a href="#posiciones">Posiciones</a><a href="#socios">Socios</a><button id="openAdmin">Admin</button>
+  </nav>
+</header>
+<main>
+<section id="inicio" class="hero">
+  <div class="heroCopy">
+    <span class="tag">Portal oficial del club</span>
+    <h1>Ricardo Méndez</h1>
+    <p class="slogan">Negro, dorado y azul eléctrico. Historia, pasión y competencia.</p>
+    <p class="desc">Noticias, fotos, videos, fixture, tablas de posiciones, socios y estadísticas en una web pública administrada solo por autorización.</p>
+    <div class="actions"><a href="#series" class="btn gold">Ver series</a><a href="#socios" class="btn blue">Hazte socio</a></div>
   </div>
+  <div class="heroLogo"><img src="logo_ricardo_mendez_transparente.png"><div class="ring"></div></div>
+  <aside class="matchCard"><span>Próximo partido</span><div class="vs"><img src="logo_ricardo_mendez_transparente.png"><b>VS</b><div>Rival</div></div><p>Serie Honor · Sábado 25 Mayo · 15:00 hrs</p></aside>
+</section>
 
-  <script src="script.js"></script>
-</body>
-</html>
+<section class="dashboard">
+  <article><span>Series</span><b data-count="11">0</b></article>
+  <article><span>Socios</span><b data-count="246">0</b></article>
+  <article><span>Goles</span><b data-count="48">0</b></article>
+  <article><span>Victorias</span><b data-count="15">0</b></article>
+</section>
+
+<section id="series" class="section">
+  <div class="sectionHead"><h2>Series en competencia</h2><p>Listado oficial de categorías del club.</p></div>
+  <div class="seriesGrid"><article><span>01</span><strong>SERIE PEQUES</strong></article>
+<article><span>02</span><strong>SERIE SEGUNDA INFANTIL</strong></article>
+<article><span>03</span><strong>SERIE PRIMERA INFANTIL</strong></article>
+<article><span>04</span><strong>SERIE JUVENILES</strong></article>
+<article><span>05</span><strong>SERIE ORO</strong></article>
+<article><span>06</span><strong>SERIE SUPER SENIOR</strong></article>
+<article><span>07</span><strong>SERIE SENIOR</strong></article>
+<article><span>08</span><strong>SERIE SEGUNDA ADULTOS</strong></article>
+<article><span>09</span><strong>SERIE PRIMERA ADULTOS</strong></article>
+<article><span>10</span><strong>SERIE PLATINOS</strong></article>
+<article><span>11</span><strong>SERIE HONOR</strong></article></div>
+</section>
+
+<section id="noticias" class="section"><div class="sectionHead"><h2>Noticias</h2><p>Información publicada por administración.</p></div><div id="newsGrid" class="grid"></div></section>
+<section id="galeria" class="section"><div class="sectionHead"><h2>Fotos y videos</h2><p>Galería pública autorizada.</p></div><div id="galleryGrid" class="gallery"></div></section>
+
+<section id="fixture" class="section"><div class="sectionHead"><h2>Fixture</h2><p>Calendario por serie.</p></div><div class="tableBox"><table><thead><tr><th>Fecha</th><th>Serie</th><th>Partido</th><th>Cancha</th><th>Hora</th></tr></thead><tbody id="fixtureRows"></tbody></table></div></section>
+<section id="posiciones" class="section"><div class="sectionHead"><h2>Tabla de posiciones</h2><p>Competencia actual.</p></div><div class="tableBox"><table><thead><tr><th>Pos.</th><th>Equipo</th><th>PJ</th><th>PG</th><th>PE</th><th>PP</th><th>DG</th><th>PTS</th></tr></thead><tbody id="positionRows"></tbody></table></div></section>
+
+<section id="socios" class="section split">
+  <div><div class="sectionHead"><h2>Solicitud de socio</h2><p>Queda pendiente hasta aprobación del administrador.</p></div>
+  <form id="memberRequestForm" class="formCard"><input id="memberName" placeholder="Nombre completo" required><input id="memberRut" placeholder="RUT" required><input id="memberPhone" placeholder="Teléfono" required><select id="memberType"><option>Socio activo</option><option>Jugador</option><option>Apoderado</option><option>Dirigente</option></select><button>Enviar solicitud</button></form></div>
+  <div class="infoCard"><h3>Administración segura</h3><p>La página es pública, pero solo el administrador puede aprobar y publicar información.</p><p>Para funcionamiento real online se conecta con Supabase.</p></div>
+</section>
+</main>
+
+<div id="adminModal" class="modal"><div class="modalBox"><button class="close" id="closeAdmin">×</button>
+<div id="loginPanel"><h2>Acceso administrador</h2><p>Clave demo: admin1932</p><input id="adminPassword" type="password" placeholder="Clave administrador"><button id="loginBtn">Ingresar</button></div>
+<div id="adminPanel" class="hidden"><h2>Panel administrador</h2>
+<div class="adminTabs"><button data-tab="tabNoticias" class="tab active">Noticias</button><button data-tab="tabGaleria" class="tab">Fotos/Videos</button><button data-tab="tabFixture" class="tab">Fixture</button><button data-tab="tabSolicitudes" class="tab">Solicitudes</button></div>
+<section id="tabNoticias" class="tabContent"><input id="newsTitle" placeholder="Título de noticia"><textarea id="newsText" placeholder="Información"></textarea><button id="addNews">Publicar noticia</button></section>
+<section id="tabGaleria" class="tabContent hidden"><input id="mediaTitle" placeholder="Título"><input id="mediaUrl" placeholder="URL imagen o video"><select id="mediaType"><option>Foto</option><option>Video</option></select><button id="addMedia">Publicar galería</button></section>
+<section id="tabFixture" class="tabContent hidden"><input id="fxDate" placeholder="Fecha"><select id="fxSerie"><option>SERIE PEQUES</option>
+<option>SERIE SEGUNDA INFANTIL</option>
+<option>SERIE PRIMERA INFANTIL</option>
+<option>SERIE JUVENILES</option>
+<option>SERIE ORO</option>
+<option>SERIE SUPER SENIOR</option>
+<option>SERIE SENIOR</option>
+<option>SERIE SEGUNDA ADULTOS</option>
+<option>SERIE PRIMERA ADULTOS</option>
+<option>SERIE PLATINOS</option>
+<option>SERIE HONOR</option></select><input id="fxGame" placeholder="Partido"><input id="fxPlace" placeholder="Cancha"><input id="fxHour" placeholder="Hora"><button id="addFixture">Guardar partido</button></section>
+<section id="tabSolicitudes" class="tabContent hidden"><div id="requestList"></div></section>
+</div></div></div>
+<script src="script.js"></script>
+</body></html>

@@ -1,5 +1,13 @@
-# Club Deportivo Ricardo Méndez V6
+# Club Deportivo Ricardo Méndez V7
 
-Incluye PWA, panel admin total, carga CSV, fotos/videos adjuntos, auspiciadores, plantilla CSV y estructura Supabase.
+Cambios:
+- Botones de carga eliminados de la vista pública.
+- Cargas/adjuntos solo dentro del panel administrador.
+- Próximo partido editable: rival, logo rival, serie, fecha, hora y cancha.
+- Tabla acumulativa general sumando todas las series.
+- Frase “Más que un club, una familia” en dorado.
+- Más azul eléctrico.
+- Fondo deportivo con jugador/balón.
+- Auspiciadores más integrados visualmente.
 
-Clave demo: admin1932
+Clave demo admin: admin1932

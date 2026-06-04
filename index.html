@@ -1,16 +1,278 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Club Deportivo Ricardo Méndez</title><link rel="stylesheet" href="styles.css"></head><body>
-<div class="fx fx-blue"></div><div class="fx fx-gold"></div><div class="gridFx"></div>
-<aside class="side"><div class="sideLogo"><img src="logo_ricardo_mendez_transparente.png"></div><a href="#inicio">🏠<span>Inicio</span></a><a href="#historia">⭐<span>Historia</span></a><a href="#aniversario">🎉<span>Aniv.</span></a><a href="#series">⚽<span>Series</span></a><a href="#noticias">📰<span>Noticias</span></a><a href="#galeria">📸<span>Galería</span></a><a href="#fixture">📅<span>Fixture</span></a><a href="#posiciones">🏆<span>Tabla</span></a><a href="#auspiciadores">🤝<span>Apoyo</span></a><a href="#socios">👥<span>Socios</span></a><button id="openAdmin">⚙️<span>Admin</span></button></aside>
-<main class="app"><section id="inicio" class="hero"><header class="topbar"><div><strong>Club Deportivo Ricardo Méndez</strong><span>Negro · Dorado · Azul eléctrico</span></div><nav><a href="#historia">Historia</a><a href="#aniversario">Aniversario</a><a href="#posiciones">Posiciones</a><a href="#auspiciadores">Auspiciadores</a><button id="openAdminTop">Administrar</button></nav></header>
-<div class="heroInner"><div class="heroText"><span class="tag">Portal oficial del club</span><h1>Ricardo Méndez</h1><p class="oneLine">Más que un club, una familia.</p><p class="desc">Noticias, series, fixture, posiciones, galería, socios, auspiciadores y administración privada para publicar información autorizada.</p><div class="actions"><a class="btn gold" href="#posiciones">Ver posiciones</a><a class="btn blue" href="#auspiciadores">Ver auspiciadores</a></div></div><div class="heroBadge"><div class="orb"></div><img src="logo_ricardo_mendez_transparente.png"></div><div class="match"><small>Próximo partido</small><div class="versus"><img src="logo_ricardo_mendez_transparente.png"><b>VS</b><div>Rival</div></div><p>SERIE HONOR · Sábado 25 Mayo · 15:00 hrs</p></div></div></section>
-<section class="metrics"><article><span>Series</span><b>11</b></article><article><span>Socios</span><b>246</b></article><article><span>Auspiciadores</span><b>17</b></article><article><span>Aniversario</span><b>12/08</b></article></section>
-<section id="historia" class="section history"><div class="sectionHead"><h2>Historia del club</h2><p>Información institucional editable desde administración.</p></div><div class="historyGrid"><article class="storyCard"><h3>Cómo fue creado</h3><p id="clubHistory"></p></article><article class="presidentCard"><span>Presidente actual</span><h3 id="clubPresident"></h3><p>Esta información puede actualizarse desde el panel administrador.</p></article></div></section>
-<section id="aniversario" class="section anniversary"><div class="anniversaryCard"><div><span>Aniversario oficial</span><h2 id="anniversaryText">12/08/2026</h2><p>Fecha destacada del Club Deportivo Ricardo Méndez. El año se puede modificar desde administración.</p></div><img src="logo_ricardo_mendez_transparente.png"></div></section>
-<section id="series" class="section"><div class="sectionHead"><h2>Series en competencia</h2><p>Selecciona una categoría para revisar su tabla.</p></div><div class="seriesCloud"><button class="seriePill" data-serie="SERIE PEQUES">SERIE PEQUES</button><button class="seriePill" data-serie="SERIE SEGUNDA INFANTIL">SERIE SEGUNDA INFANTIL</button><button class="seriePill" data-serie="SERIE PRIMERA INFANTIL">SERIE PRIMERA INFANTIL</button><button class="seriePill" data-serie="SERIE JUVENILES">SERIE JUVENILES</button><button class="seriePill" data-serie="SERIE ORO">SERIE ORO</button><button class="seriePill" data-serie="SERIE SUPER SENIOR">SERIE SUPER SENIOR</button><button class="seriePill" data-serie="SERIE SENIOR">SERIE SENIOR</button><button class="seriePill" data-serie="SERIE SEGUNDA ADULTOS">SERIE SEGUNDA ADULTOS</button><button class="seriePill" data-serie="SERIE PRIMERA ADULTOS">SERIE PRIMERA ADULTOS</button><button class="seriePill" data-serie="SERIE PLATINOS">SERIE PLATINOS</button><button class="seriePill" data-serie="SERIE HONOR">SERIE HONOR</button></div></section>
-<section id="noticias" class="section"><div class="sectionHead"><h2>Noticias</h2><p>Publicaciones oficiales autorizadas.</p></div><div id="newsGrid" class="cards"></div></section>
-<section id="galeria" class="section"><div class="sectionHead"><h2>Fotos y videos</h2><p>Galería pública del club.</p></div><div id="galleryGrid" class="gallery"></div></section>
-<section id="fixture" class="section"><div class="sectionHead"><h2>Fixture</h2><p>Calendario por serie.</p></div><div class="tableWrap"><table><thead><tr><th>Fecha</th><th>Serie</th><th>Partido</th><th>Cancha</th><th>Hora</th></tr></thead><tbody id="fixtureRows"></tbody></table></div></section>
-<section id="posiciones" class="section"><div class="sectionHead"><h2>Tabla de posiciones</h2><p>Elige cualquier serie para ver sus puntajes.</p></div><div class="positionTools"><select id="standingSerieSelect"><option value="SERIE PEQUES">SERIE PEQUES</option><option value="SERIE SEGUNDA INFANTIL">SERIE SEGUNDA INFANTIL</option><option value="SERIE PRIMERA INFANTIL">SERIE PRIMERA INFANTIL</option><option value="SERIE JUVENILES">SERIE JUVENILES</option><option value="SERIE ORO">SERIE ORO</option><option value="SERIE SUPER SENIOR">SERIE SUPER SENIOR</option><option value="SERIE SENIOR">SERIE SENIOR</option><option value="SERIE SEGUNDA ADULTOS">SERIE SEGUNDA ADULTOS</option><option value="SERIE PRIMERA ADULTOS">SERIE PRIMERA ADULTOS</option><option value="SERIE PLATINOS">SERIE PLATINOS</option><option value="SERIE HONOR">SERIE HONOR</option></select><button id="addDemoTeam">Administrar puntajes</button></div><div class="tableWrap"><table><thead><tr><th>Pos.</th><th>Equipo</th><th>PJ</th><th>PG</th><th>PE</th><th>PP</th><th>DG</th><th>PTS</th></tr></thead><tbody id="standingRows"></tbody></table></div></section>
-<section id="auspiciadores" class="section sponsors"><div class="sectionHead"><h2>Auspiciadores oficiales</h2><p>Empresas y emprendimientos que apoyan al club.</p></div><div id="sponsorGrid" class="sponsorGrid"><article><img src="sponsor_01.png" alt="San Patricio Minimarket & Botillería"><h3>San Patricio Minimarket & Botillería</h3></article><article><img src="sponsor_02.png" alt="GPS Ruta"><h3>GPS Ruta</h3></article><article><img src="sponsor_03.png" alt="Restaurante El Caribe"><h3>Restaurante El Caribe</h3></article><article><img src="sponsor_04.png" alt="Constructora Venegas Pradenas"><h3>Constructora Venegas Pradenas</h3></article><article><img src="sponsor_05.png" alt="Constructora Beltrán"><h3>Constructora Beltrán</h3></article><article><img src="sponsor_06.png" alt="Ferretería Parralito"><h3>Ferretería Parralito</h3></article><article><img src="sponsor_07.png" alt="Arriendo de Maquinarias Menores V&V SPA"><h3>Arriendo de Maquinarias Menores V&V SPA</h3></article><article><img src="sponsor_08.png" alt="Distribuidora La Maquila"><h3>Distribuidora La Maquila</h3></article><article><img src="sponsor_09.png" alt="Restaurant La Caserita"><h3>Restaurant La Caserita</h3></article><article><img src="sponsor_10.png" alt="El Maestro de la Parrilla Juan Criollo"><h3>El Maestro de la Parrilla Juan Criollo</h3></article><article><img src="sponsor_11.png" alt="Peñafrut"><h3>Peñafrut</h3></article><article><img src="sponsor_12.png" alt="Futbar Pitu"><h3>Futbar Pitu</h3></article><article><img src="sponsor_13.png" alt="La Espiga de Oro"><h3>La Espiga de Oro</h3></article><article><img src="sponsor_14.png" alt="Complejo El Castaño"><h3>Complejo El Castaño</h3></article><article><img src="sponsor_15.png" alt="Cascadas de Ñuble"><h3>Cascadas de Ñuble</h3></article><article><img src="sponsor_16.png" alt="Mayor"><h3>Mayor</h3></article><article><img src="sponsor_17.png" alt="Don Luchito Cecinas"><h3>Don Luchito Cecinas</h3></article></div></section>
-<section id="socios" class="section split"><div><div class="sectionHead"><h2>Solicitud de socio</h2><p>La solicitud queda pendiente hasta aprobación.</p></div><form id="memberRequestForm" class="formCard"><input id="memberName" placeholder="Nombre completo" required><input id="memberRut" placeholder="RUT" required><input id="memberPhone" placeholder="Teléfono" required><select id="memberType"><option>Socio activo</option><option>Jugador</option><option>Apoderado</option><option>Dirigente</option></select><button>Enviar solicitud</button></form></div><div class="infoCard"><h3>Web pública + administración privada</h3><p>El público puede ver la información. Solo el administrador autorizado puede publicar noticias, fixture, posiciones, historia, aniversario y auspiciadores.</p></div></section></main>
-<div id="adminModal" class="modal"><div class="modalBox"><button class="close" id="closeAdmin">×</button><div id="loginPanel"><h2>Acceso administrador</h2><p>Clave demo: admin1932</p><input id="adminPassword" type="password" placeholder="Clave administrador"><button id="loginBtn">Ingresar</button></div><div id="adminPanel" class="hidden"><h2>Panel administrador</h2><div class="adminTabs"><button class="tab active" data-tab="tabHistoria">Historia</button><button class="tab" data-tab="tabNoticias">Noticias</button><button class="tab" data-tab="tabGaleria">Fotos/Videos</button><button class="tab" data-tab="tabFixture">Fixture</button><button class="tab" data-tab="tabPosiciones">Posiciones</button><button class="tab" data-tab="tabAniversario">Aniversario</button><button class="tab" data-tab="tabSolicitudes">Solicitudes</button></div><section id="tabHistoria" class="tabContent"><textarea id="historyInput" placeholder="Historia del club"></textarea><input id="presidentInput" placeholder="Presidente actual"><button id="saveHistory">Guardar historia</button></section><section id="tabNoticias" class="tabContent hidden"><input id="newsTitle" placeholder="Título"><textarea id="newsText" placeholder="Información"></textarea><button id="addNews">Publicar noticia</button></section><section id="tabGaleria" class="tabContent hidden"><input id="mediaTitle" placeholder="Título"><input id="mediaUrl" placeholder="URL imagen o video"><select id="mediaType"><option>Foto</option><option>Video</option></select><button id="addMedia">Publicar en galería</button></section><section id="tabFixture" class="tabContent hidden"><input id="fxDate" placeholder="Fecha"><select id="fxSerie"><option value="SERIE PEQUES">SERIE PEQUES</option><option value="SERIE SEGUNDA INFANTIL">SERIE SEGUNDA INFANTIL</option><option value="SERIE PRIMERA INFANTIL">SERIE PRIMERA INFANTIL</option><option value="SERIE JUVENILES">SERIE JUVENILES</option><option value="SERIE ORO">SERIE ORO</option><option value="SERIE SUPER SENIOR">SERIE SUPER SENIOR</option><option value="SERIE SENIOR">SERIE SENIOR</option><option value="SERIE SEGUNDA ADULTOS">SERIE SEGUNDA ADULTOS</option><option value="SERIE PRIMERA ADULTOS">SERIE PRIMERA ADULTOS</option><option value="SERIE PLATINOS">SERIE PLATINOS</option><option value="SERIE HONOR">SERIE HONOR</option></select><input id="fxGame" placeholder="Partido"><input id="fxPlace" placeholder="Cancha"><input id="fxHour" placeholder="Hora"><button id="addFixture">Guardar partido</button></section><section id="tabPosiciones" class="tabContent hidden"><select id="posSerie"><option value="SERIE PEQUES">SERIE PEQUES</option><option value="SERIE SEGUNDA INFANTIL">SERIE SEGUNDA INFANTIL</option><option value="SERIE PRIMERA INFANTIL">SERIE PRIMERA INFANTIL</option><option value="SERIE JUVENILES">SERIE JUVENILES</option><option value="SERIE ORO">SERIE ORO</option><option value="SERIE SUPER SENIOR">SERIE SUPER SENIOR</option><option value="SERIE SENIOR">SERIE SENIOR</option><option value="SERIE SEGUNDA ADULTOS">SERIE SEGUNDA ADULTOS</option><option value="SERIE PRIMERA ADULTOS">SERIE PRIMERA ADULTOS</option><option value="SERIE PLATINOS">SERIE PLATINOS</option><option value="SERIE HONOR">SERIE HONOR</option></select><input id="posTeam" placeholder="Equipo"><input id="posPJ" placeholder="PJ"><input id="posPG" placeholder="PG"><input id="posPE" placeholder="PE"><input id="posPP" placeholder="PP"><input id="posDG" placeholder="DG"><input id="posPTS" placeholder="PTS"><button id="addPosition">Agregar equipo a serie</button></section><section id="tabAniversario" class="tabContent hidden"><input id="anniversaryInput" placeholder="Ej: 12/08/2026"><button id="saveAnniversary">Guardar aniversario</button></section><section id="tabSolicitudes" class="tabContent hidden"><div id="requestList"></div></section></div></div></div><script src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Club Deportivo Ricardo Méndez</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="bgVideo"></div>
+<div class="lightSweep"></div>
+<div class="particleGrid"></div>
+
+<aside class="side">
+  <img class="sideLogo" src="logo_ricardo_mendez.png">
+  <a href="#inicio">🏠<span>Inicio</span></a>
+  <a href="#historia">⭐<span>Historia</span></a>
+  <a href="#aniversario">🎉<span>Aniv.</span></a>
+  <a href="#series">⚽<span>Series</span></a>
+  <a href="#noticias">📰<span>Noticias</span></a>
+  <a href="#galeria">📸<span>Galería</span></a>
+  <a href="#fixture">📅<span>Fixture</span></a>
+  <a href="#posiciones">🏆<span>Tabla</span></a>
+  <a href="#auspiciadores">🤝<span>Apoyo</span></a>
+  <a href="#socios">👥<span>Socios</span></a>
+  <button id="openAdmin">⚙️<span>Admin</span></button>
+</aside>
+
+<main class="app">
+<section id="inicio" class="hero">
+  <header class="topbar">
+    <div>
+      <strong id="siteClubName">Club Deportivo Ricardo Méndez</strong>
+      <span>Portal oficial deportivo</span>
+    </div>
+    <nav>
+      <a href="#posiciones">Posiciones</a>
+      <a href="#galeria">Fotos/Videos</a>
+      <a href="#auspiciadores">Auspiciadores</a>
+      <button id="openAdminTop">Administrar</button>
+    </nav>
+  </header>
+
+  <div class="heroInner">
+    <div class="heroText">
+      <span class="tag">Negro · Dorado · Azul eléctrico</span>
+      <h1 id="mainTitle">Ricardo Méndez</h1>
+      <p id="mainSubtitle" class="oneLine">Más que un club, una familia.</p>
+      <p id="mainDescription" class="desc">Noticias, series, fixture, posiciones, galería, socios, auspiciadores y administración privada para publicar información autorizada.</p>
+      <div class="actions">
+        <a class="btn gold" href="#posiciones">Ver posiciones</a>
+        <a class="btn blue" href="#galeria">Subir fotos/videos</a>
+      </div>
+    </div>
+
+    <div class="heroBadge">
+      <div class="orb"></div>
+      <img src="logo_ricardo_mendez.png">
+    </div>
+
+    <div class="match">
+      <small>Próximo partido</small>
+      <div class="versus"><img src="logo_ricardo_mendez.png"><b>VS</b><div>Rival</div></div>
+      <p id="nextMatch">SERIE HONOR · Sábado 25 Mayo · 15:00 hrs</p>
+    </div>
+  </div>
+</section>
+
+<section class="metrics">
+  <article><span>Series</span><b>11</b></article>
+  <article><span>Socios</span><b id="metricSocios">246</b></article>
+  <article><span>Auspiciadores</span><b>17</b></article>
+  <article><span>Aniversario</span><b id="metricAnniversary">12/08</b></article>
+</section>
+
+<section id="historia" class="section">
+  <div class="sectionHead"><h2>Historia del club</h2><p>Editable desde administración.</p></div>
+  <div class="historyGrid">
+    <article class="storyCard"><h3>Cómo fue creado</h3><p id="clubHistory"></p></article>
+    <article class="presidentCard"><span>Presidente actual</span><h3 id="clubPresident"></h3><p>Dato administrable para mantener actualizado el sitio.</p></article>
+  </div>
+</section>
+
+<section id="aniversario" class="section">
+  <div class="anniversaryCard">
+    <div><span>Aniversario oficial</span><h2 id="anniversaryText">12/08/2026</h2><p>Fecha editable año tras año desde el panel administrador.</p></div>
+    <img src="logo_ricardo_mendez.png">
+  </div>
+</section>
+
+<section id="series" class="section">
+  <div class="sectionHead"><h2>Series en competencia</h2><p>Selecciona una serie para ver sus puntajes.</p></div>
+  <div class="seriesCloud"><button class="seriePill" data-serie="SERIE PEQUES">SERIE PEQUES</button>
+<button class="seriePill" data-serie="SERIE SEGUNDA INFANTIL">SERIE SEGUNDA INFANTIL</button>
+<button class="seriePill" data-serie="SERIE PRIMERA INFANTIL">SERIE PRIMERA INFANTIL</button>
+<button class="seriePill" data-serie="SERIE JUVENILES">SERIE JUVENILES</button>
+<button class="seriePill" data-serie="SERIE ORO">SERIE ORO</button>
+<button class="seriePill" data-serie="SERIE SUPER SENIOR">SERIE SUPER SENIOR</button>
+<button class="seriePill" data-serie="SERIE SENIOR">SERIE SENIOR</button>
+<button class="seriePill" data-serie="SERIE SEGUNDA ADULTOS">SERIE SEGUNDA ADULTOS</button>
+<button class="seriePill" data-serie="SERIE PRIMERA ADULTOS">SERIE PRIMERA ADULTOS</button>
+<button class="seriePill" data-serie="SERIE PLATINOS">SERIE PLATINOS</button>
+<button class="seriePill" data-serie="SERIE HONOR">SERIE HONOR</button></div>
+</section>
+
+<section id="noticias" class="section">
+  <div class="sectionHead"><h2>Noticias</h2><p>Todo es editable por administrador.</p></div>
+  <div id="newsGrid" class="cards"></div>
+</section>
+
+<section id="galeria" class="section">
+  <div class="sectionHead"><h2>Fotos y videos</h2><p>El administrador puede adjuntar archivos desde el computador.</p></div>
+  <div id="galleryGrid" class="gallery"></div>
+</section>
+
+<section id="fixture" class="section">
+  <div class="sectionHead"><h2>Fixture</h2><p>Calendario por serie.</p></div>
+  <div class="tableWrap"><table><thead><tr><th>Fecha</th><th>Serie</th><th>Partido</th><th>Cancha</th><th>Hora</th></tr></thead><tbody id="fixtureRows"></tbody></table></div>
+</section>
+
+<section id="posiciones" class="section">
+  <div class="sectionHead"><h2>Tabla de posiciones</h2><p>Selecciona cualquier serie o carga una planilla CSV.</p></div>
+  <div class="positionTools">
+    <select id="standingSerieSelect"><option value="SERIE PEQUES">SERIE PEQUES</option>
+<option value="SERIE SEGUNDA INFANTIL">SERIE SEGUNDA INFANTIL</option>
+<option value="SERIE PRIMERA INFANTIL">SERIE PRIMERA INFANTIL</option>
+<option value="SERIE JUVENILES">SERIE JUVENILES</option>
+<option value="SERIE ORO">SERIE ORO</option>
+<option value="SERIE SUPER SENIOR">SERIE SUPER SENIOR</option>
+<option value="SERIE SENIOR">SERIE SENIOR</option>
+<option value="SERIE SEGUNDA ADULTOS">SERIE SEGUNDA ADULTOS</option>
+<option value="SERIE PRIMERA ADULTOS">SERIE PRIMERA ADULTOS</option>
+<option value="SERIE PLATINOS">SERIE PLATINOS</option>
+<option value="SERIE HONOR">SERIE HONOR</option></select>
+    <button id="openImport">Adjuntar planilla CSV</button>
+  </div>
+  <div class="tableWrap"><table><thead><tr><th>Pos.</th><th>Equipo</th><th>PJ</th><th>PG</th><th>PE</th><th>PP</th><th>DG</th><th>PTS</th></tr></thead><tbody id="standingRows"></tbody></table></div>
+</section>
+
+<section id="auspiciadores" class="section sponsors">
+  <div class="sectionHead"><h2>Auspiciadores oficiales</h2><p>Imágenes optimizadas sobre tarjetas oscuras.</p></div>
+  <div id="sponsorGrid" class="sponsorGrid"><article><div class="sponsorLogo"><img src="sponsor_01.png" alt="San Patricio Minimarket & Botillería"></div><h3>San Patricio Minimarket & Botillería</h3></article>
+<article><div class="sponsorLogo"><img src="sponsor_02.png" alt="GPS Ruta"></div><h3>GPS Ruta</h3></article>
+<article><div class="sponsorLogo"><img src="sponsor_03.png" alt="Restaurante El Caribe"></div><h3>Restaurante El Caribe</h3></article>
+<article><div class="sponsorLogo"><img src="sponsor_04.png" alt="Constructora Venegas Pradenas"></div><h3>Constructora Venegas Pradenas</h3></article>
+<article><div class="sponsorLogo"><img src="sponsor_05.png" alt="Constructora Beltrán"></div><h3>Constructora Beltrán</h3></article>
+<article><div class="sponsorLogo"><img src="sponsor_06.png" alt="Ferretería Parralito"></div><h3>Ferretería Parralito</h3></article>
+<article><div class="sponsorLogo"><img src="sponsor_07.png" alt="Arriendo de Maquinarias Menores V&V SPA"></div><h3>Arriendo de Maquinarias Menores V&V SPA</h3></article>
+<article><div class="sponsorLogo"><img src="sponsor_08.png" alt="Distribuidora La Maquila"></div><h3>Distribuidora La Maquila</h3></article>
+<article><div class="sponsorLogo"><img src="sponsor_09.png" alt="Restaurant La Caserita"></div><h3>Restaurant La Caserita</h3></article>
+<article><div class="sponsorLogo"><img src="sponsor_10.png" alt="El Maestro de la Parrilla Juan Criollo"></div><h3>El Maestro de la Parrilla Juan Criollo</h3></article>
+<article><div class="sponsorLogo"><img src="sponsor_11.png" alt="Peñafrut"></div><h3>Peñafrut</h3></article>
+<article><div class="sponsorLogo"><img src="sponsor_12.png" alt="Futbar Pitu"></div><h3>Futbar Pitu</h3></article>
+<article><div class="sponsorLogo"><img src="sponsor_13.png" alt="La Espiga de Oro"></div><h3>La Espiga de Oro</h3></article>
+<article><div class="sponsorLogo"><img src="sponsor_14.png" alt="Complejo El Castaño"></div><h3>Complejo El Castaño</h3></article>
+<article><div class="sponsorLogo"><img src="sponsor_15.png" alt="Cascadas de Ñuble"></div><h3>Cascadas de Ñuble</h3></article>
+<article><div class="sponsorLogo"><img src="sponsor_16.png" alt="Mayor"></div><h3>Mayor</h3></article>
+<article><div class="sponsorLogo"><img src="sponsor_17.png" alt="Don Luchito Cecinas"></div><h3>Don Luchito Cecinas</h3></article></div>
+</section>
+
+<section id="socios" class="section split">
+  <div>
+    <div class="sectionHead"><h2>Solicitud de socio</h2><p>Pendiente hasta aprobación.</p></div>
+    <form id="memberRequestForm" class="formCard">
+      <input id="memberName" placeholder="Nombre completo" required>
+      <input id="memberRut" placeholder="RUT" required>
+      <input id="memberPhone" placeholder="Teléfono" required>
+      <select id="memberType"><option>Socio activo</option><option>Jugador</option><option>Apoderado</option><option>Dirigente</option></select>
+      <button>Enviar solicitud</button>
+    </form>
+  </div>
+  <div class="infoCard"><h3>Administración total</h3><p>Textos, noticias, galería, fixture, puntajes, aniversario, historia y datos principales se editan desde el panel administrador.</p></div>
+</section>
+</main>
+
+<div id="adminModal" class="modal"><div class="modalBox">
+<button class="close" id="closeAdmin">×</button>
+<div id="loginPanel"><h2>Acceso administrador</h2><p>Clave demo: admin1932</p><input id="adminPassword" type="password" placeholder="Clave administrador"><button id="loginBtn">Ingresar</button></div>
+
+<div id="adminPanel" class="hidden">
+<h2>Panel administrador</h2>
+<div class="adminTabs">
+<button class="tab active" data-tab="tabGeneral">General</button>
+<button class="tab" data-tab="tabHistoria">Historia</button>
+<button class="tab" data-tab="tabNoticias">Noticias</button>
+<button class="tab" data-tab="tabGaleria">Fotos/Videos</button>
+<button class="tab" data-tab="tabFixture">Fixture</button>
+<button class="tab" data-tab="tabPosiciones">Posiciones</button>
+<button class="tab" data-tab="tabAuspiciadores">Auspiciadores</button>
+<button class="tab" data-tab="tabSolicitudes">Solicitudes</button>
+</div>
+
+<section id="tabGeneral" class="tabContent">
+<input id="editClubName" placeholder="Nombre del club">
+<input id="editMainTitle" placeholder="Título principal">
+<input id="editSubtitle" placeholder="Frase principal">
+<textarea id="editDescription" placeholder="Descripción principal"></textarea>
+<input id="anniversaryInput" placeholder="Aniversario Ej: 12/08/2026">
+<button id="saveGeneral">Guardar cambios generales</button>
+</section>
+
+<section id="tabHistoria" class="tabContent hidden">
+<textarea id="historyInput" placeholder="Historia del club"></textarea>
+<input id="presidentInput" placeholder="Presidente actual">
+<button id="saveHistory">Guardar historia</button>
+</section>
+
+<section id="tabNoticias" class="tabContent hidden">
+<input id="newsTitle" placeholder="Título">
+<textarea id="newsText" placeholder="Información"></textarea>
+<button id="addNews">Publicar noticia</button>
+</section>
+
+<section id="tabGaleria" class="tabContent hidden">
+<input id="mediaTitle" placeholder="Título">
+<input id="mediaFile" type="file" accept="image/*,video/*">
+<input id="mediaUrl" placeholder="O pega URL de imagen/video">
+<select id="mediaType"><option>Foto</option><option>Video</option></select>
+<button id="addMedia">Adjuntar y publicar</button>
+</section>
+
+<section id="tabFixture" class="tabContent hidden">
+<input id="fxDate" placeholder="Fecha">
+<select id="fxSerie"><option value="SERIE PEQUES">SERIE PEQUES</option>
+<option value="SERIE SEGUNDA INFANTIL">SERIE SEGUNDA INFANTIL</option>
+<option value="SERIE PRIMERA INFANTIL">SERIE PRIMERA INFANTIL</option>
+<option value="SERIE JUVENILES">SERIE JUVENILES</option>
+<option value="SERIE ORO">SERIE ORO</option>
+<option value="SERIE SUPER SENIOR">SERIE SUPER SENIOR</option>
+<option value="SERIE SENIOR">SERIE SENIOR</option>
+<option value="SERIE SEGUNDA ADULTOS">SERIE SEGUNDA ADULTOS</option>
+<option value="SERIE PRIMERA ADULTOS">SERIE PRIMERA ADULTOS</option>
+<option value="SERIE PLATINOS">SERIE PLATINOS</option>
+<option value="SERIE HONOR">SERIE HONOR</option></select>
+<input id="fxGame" placeholder="Partido">
+<input id="fxPlace" placeholder="Cancha">
+<input id="fxHour" placeholder="Hora">
+<button id="addFixture">Guardar partido</button>
+</section>
+
+<section id="tabPosiciones" class="tabContent hidden">
+<select id="posSerie"><option value="SERIE PEQUES">SERIE PEQUES</option>
+<option value="SERIE SEGUNDA INFANTIL">SERIE SEGUNDA INFANTIL</option>
+<option value="SERIE PRIMERA INFANTIL">SERIE PRIMERA INFANTIL</option>
+<option value="SERIE JUVENILES">SERIE JUVENILES</option>
+<option value="SERIE ORO">SERIE ORO</option>
+<option value="SERIE SUPER SENIOR">SERIE SUPER SENIOR</option>
+<option value="SERIE SENIOR">SERIE SENIOR</option>
+<option value="SERIE SEGUNDA ADULTOS">SERIE SEGUNDA ADULTOS</option>
+<option value="SERIE PRIMERA ADULTOS">SERIE PRIMERA ADULTOS</option>
+<option value="SERIE PLATINOS">SERIE PLATINOS</option>
+<option value="SERIE HONOR">SERIE HONOR</option></select>
+<input id="positionsCsv" type="file" accept=".csv,text/csv">
+<p class="hint">Formato CSV: serie,equipo,pj,pg,pe,pp,dg,pts</p>
+<button id="importCsv">Cargar planilla automáticamente</button>
+<hr>
+<input id="posTeam" placeholder="Equipo">
+<input id="posPJ" placeholder="PJ">
+<input id="posPG" placeholder="PG">
+<input id="posPE" placeholder="PE">
+<input id="posPP" placeholder="PP">
+<input id="posDG" placeholder="DG">
+<input id="posPTS" placeholder="PTS">
+<button id="addPosition">Agregar equipo manualmente</button>
+</section>
+
+<section id="tabAuspiciadores" class="tabContent hidden">
+<input id="sponsorName" placeholder="Nombre auspiciador">
+<input id="sponsorFile" type="file" accept="image/*">
+<input id="sponsorUrl" placeholder="O pega URL de imagen">
+<button id="addSponsor">Adjuntar auspiciador</button>
+</section>
+
+<section id="tabSolicitudes" class="tabContent hidden"><div id="requestList"></div></section>
+</div>
+</div></div>
+<script src="script.js"></script>
+</body></html>

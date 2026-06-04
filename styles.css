@@ -6,3 +6,76 @@
 .sponsorGrid article{background:radial-gradient(circle at 50% 38%,rgba(0,183,255,.20),transparent 48%),linear-gradient(135deg,rgba(0,183,255,.18),rgba(215,170,49,.10)),rgba(5,8,14,.92)!important}
 .sponsorGrid img{mix-blend-mode:screen;filter:contrast(1.28) saturate(1.18) drop-shadow(0 0 14px rgba(0,183,255,.45))!important}
 .publicOnly button{display:none!important}
+
+/* V8 ajustes finales */
+#mainTitle, #mainSubtitle{
+  font-family: Castellar, 'Cinzel Decorative', 'Times New Roman', serif !important;
+  letter-spacing: 1px;
+}
+#mainSubtitle{
+  color: var(--gold2) !important;
+  text-shadow: 0 0 18px rgba(215,170,49,.65), 0 0 28px rgba(0,183,255,.25) !important;
+}
+.sponsorGrid img{
+  mix-blend-mode: normal !important;
+  background: transparent !important;
+}
+.sponsorLogo{
+  background: radial-gradient(circle at center, rgba(0,183,255,.12), rgba(0,0,0,.18) 60%) !important;
+}
+.nextGame p{
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* V9: redes, WhatsApp y fondo más animado */
+.stadiumBg{
+  animation: stadiumMoveV9 10s ease-in-out infinite alternate !important;
+  transform-origin: center;
+}
+@keyframes stadiumMoveV9{
+  0%{transform:scale(1.03) translateX(0) translateY(0);filter:saturate(1.05) contrast(1.05)}
+  50%{transform:scale(1.09) translateX(-22px) translateY(-10px);filter:saturate(1.25) contrast(1.12)}
+  100%{transform:scale(1.06) translateX(18px) translateY(8px);filter:saturate(1.15) contrast(1.08)}
+}
+.blueEnergy{
+  animation: bluePulseV9 3.8s ease-in-out infinite alternate !important;
+}
+@keyframes bluePulseV9{
+  from{opacity:.55;transform:translateX(-30px) rotate(-3deg)}
+  to{opacity:.9;transform:translateX(120px) rotate(5deg)}
+}
+.socialMini{
+  color:#fff!important;
+  border:1px solid rgba(0,183,255,.35);
+  border-radius:999px;
+  padding:8px 12px;
+  background:rgba(0,183,255,.08)!important;
+}
+.socialBox{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:14px;
+}
+.socialBox a{
+  display:inline-block;
+  text-decoration:none;
+  padding:13px 16px;
+  border-radius:13px;
+  font-weight:900;
+  text-transform:uppercase;
+  color:#fff;
+}
+.whatsapp{
+  background:linear-gradient(90deg,#10b85a,#25d366)!important;
+  box-shadow:0 0 24px rgba(37,211,102,.35)!important;
+}
+.instagram{
+  background:linear-gradient(90deg,#833ab4,#fd1d1d,#fcb045);
+  box-shadow:0 0 24px rgba(253,29,29,.35);
+}
+.facebook{
+  background:linear-gradient(90deg,#1877f2,#0057ff);
+  box-shadow:0 0 24px rgba(24,119,242,.35);
+}

@@ -1,15 +1,5 @@
-# Club Deportivo Ricardo Méndez V5 - Admin Total
+# Club Deportivo Ricardo Méndez V6
 
-Incluye:
-- Tipografía más imponente estilo deportivo.
-- Fondo de estadio más visible con animación.
-- Auspiciadores cargados en mejor calidad y tarjetas oscuras.
-- Todo editable desde administrador:
-  textos principales, historia, presidente, aniversario, noticias, galería, fixture, puntajes, auspiciadores.
-- Fotos y videos: permite adjuntar archivo desde el computador o pegar URL.
-- Puntajes por serie: permite adjuntar CSV para carga automática.
-- Formato CSV: serie,equipo,pj,pg,pe,pp,dg,pts
-- Clave demo: admin1932
+Incluye PWA, panel admin total, carga CSV, fotos/videos adjuntos, auspiciadores, plantilla CSV y estructura Supabase.
 
-Nota:
-El guardado actual usa localStorage. Para uso real público y persistente en todos los dispositivos, se debe conectar a Supabase.
+Clave demo: admin1932

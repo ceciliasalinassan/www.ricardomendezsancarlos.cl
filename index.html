@@ -7,166 +7,181 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <aside class="sidebar">
-    <div class="logoBox">
-      <img src="logo_ricardo_mendez.png" alt="Logo Club Deportivo Ricardo Méndez" />
+  <header class="top">
+    <div class="brand">
+      <img src="logo_ricardo_mendez.png" alt="Logo Club Deportivo Ricardo Méndez">
+      <div>
+        <strong>Club Deportivo Ricardo Méndez</strong>
+        <span>Fundado el 12 de agosto de 1932</span>
+      </div>
     </div>
-    <h2>Club Deportivo<br><span>Ricardo Méndez</span></h2>
-    <p>Fundado el 12 de agosto de 1932</p>
 
     <nav>
-      <a class="active" href="#inicio">Inicio</a>
+      <a href="#inicio">Inicio</a>
       <a href="#noticias">Noticias</a>
       <a href="#galeria">Galería</a>
       <a href="#fixture">Fixture</a>
       <a href="#posiciones">Posiciones</a>
       <a href="#socios">Socios</a>
-      <a href="#estadisticas">Estadísticas</a>
+      <button id="openAdmin">Administrador</button>
     </nav>
-  </aside>
+  </header>
 
   <main>
     <section id="inicio" class="hero">
-      <div class="topline">
-        <span>Pasión</span><i></i><span>Disciplina</span><i></i><span>Respeto</span><i></i><span>Unión</span>
-      </div>
-
-      <div class="heroContent">
-        <div class="copy">
-          <span class="tag">Portal oficial del club</span>
-          <h1>Historia,<br><strong>pasión</strong><br>y corazón</h1>
-          <p>Noticias, galería, fixture, socios, tablas de posiciones y estadísticas en una plataforma moderna para el club.</p>
-          <div class="actions">
-            <a href="#socios" class="btn primary">Hazte socio</a>
-            <a href="#fixture" class="btn secondary">Ver fixture</a>
-          </div>
-        </div>
-
-        <div class="crestCard">
-          <img src="logo_ricardo_mendez.png" alt="Escudo Ricardo Méndez" />
-        </div>
-
-        <div class="matchCard">
-          <h3>Próximo partido</h3>
-          <div class="versus">
-            <div>
-              <img src="logo_ricardo_mendez.png" alt="">
-              <b>Ricardo Méndez</b>
-            </div>
-            <strong>VS</strong>
-            <div class="rival">AJ</div>
-          </div>
-          <p>Sábado 25 Mayo · 15:00 hrs</p>
-          <button>Ver detalles</button>
+      <div class="heroText">
+        <span class="eyebrow">Portal oficial del club</span>
+        <h1>Una familia, una historia, una pasión.</h1>
+        <p>Noticias, fotografías, videos, partidos, socios, estadísticas y series en competencia en una plataforma ordenada y profesional.</p>
+        <div class="heroActions">
+          <a href="#noticias">Ver noticias</a>
+          <a href="#socios" class="outline">Hazte socio</a>
         </div>
       </div>
+
+      <aside class="matchCard">
+        <span>Próximo partido</span>
+        <div class="versus">
+          <img src="logo_ricardo_mendez.png" alt="">
+          <b>VS</b>
+          <div>Rival</div>
+        </div>
+        <p id="nextMatchText">Ricardo Méndez vs Atlético Juventud · 25/05 · 15:00 hrs</p>
+      </aside>
     </section>
 
-    <section class="quickStats">
-      <article><span>Socios activos</span><b data-count="246">0</b></article>
-      <article><span>Goles temporada</span><b data-count="48">0</b></article>
-      <article><span>Victorias</span><b data-count="15">0</b></article>
-      <article><span>Series</span><b data-count="6">0</b></article>
+    <section class="dashboard">
+      <article><span>Socios activos</span><b id="sociosCount">246</b></article>
+      <article><span>Goles temporada</span><b id="golesCount">48</b></article>
+      <article><span>Victorias</span><b id="victoriasCount">15</b></article>
+      <article><span>Series</span><b id="seriesCount">6</b></article>
     </section>
 
     <section id="noticias" class="section">
-      <div class="title">
-        <h2>Últimas noticias</h2>
-        <a>Ver todas →</a>
+      <div class="sectionHead">
+        <h2>Noticias</h2>
+        <p>Información publicada por administración.</p>
       </div>
-      <div class="grid three">
-        <article class="card">
-          <div class="img img1"></div>
-          <h3>Gran victoria en casa</h3>
-          <p>El equipo suma tres puntos importantes y sigue firme en la competencia.</p>
-        </article>
-        <article class="card">
-          <div class="img img2"></div>
-          <h3>Entrenamiento intenso</h3>
-          <p>Las series se preparan para los próximos desafíos deportivos.</p>
-        </article>
-        <article class="card">
-          <div class="img img3"></div>
-          <h3>Campaña de socios</h3>
-          <p>Únete a la familia Ricardo Méndez y apoya al club.</p>
-        </article>
-      </div>
+      <div id="newsGrid" class="grid"></div>
     </section>
 
     <section id="galeria" class="section">
-      <div class="title">
-        <h2>Galería</h2>
-        <a>Ver galería →</a>
+      <div class="sectionHead">
+        <h2>Galería de fotos y videos</h2>
+        <p>Material autorizado para visualización pública.</p>
       </div>
-      <div class="gallery">
-        <div>Partidos</div>
-        <div>Hinchada</div>
-        <div>Entrenamientos</div>
-        <div>Celebraciones</div>
-      </div>
+      <div id="galleryGrid" class="gallery"></div>
     </section>
 
     <section id="fixture" class="section">
-      <div class="title">
-        <h2>Fixture</h2>
+      <div class="sectionHead">
+        <h2>Calendario de partidos</h2>
+        <p>Fixture por serie y competencia.</p>
       </div>
       <div class="tableBox">
         <table>
-          <thead><tr><th>Fecha</th><th>Serie</th><th>Rival</th><th>Cancha</th><th>Hora</th></tr></thead>
-          <tbody>
-            <tr><td>25/05/2026</td><td>Primera</td><td>Atlético Juventud</td><td>Local</td><td>15:00</td></tr>
-            <tr><td>01/06/2026</td><td>Senior</td><td>Deportivo Unión</td><td>Visita</td><td>17:00</td></tr>
-            <tr><td>08/06/2026</td><td>Juvenil</td><td>Club San José</td><td>Local</td><td>12:00</td></tr>
-          </tbody>
+          <thead><tr><th>Fecha</th><th>Serie</th><th>Partido</th><th>Cancha</th><th>Hora</th></tr></thead>
+          <tbody id="fixtureRows"></tbody>
         </table>
       </div>
     </section>
 
     <section id="posiciones" class="section">
-      <div class="title">
+      <div class="sectionHead">
         <h2>Tabla de posiciones</h2>
+        <p>Series en competencia.</p>
       </div>
       <div class="tableBox">
         <table>
           <thead><tr><th>Pos.</th><th>Equipo</th><th>PJ</th><th>PG</th><th>PE</th><th>PP</th><th>DG</th><th>PTS</th></tr></thead>
-          <tbody>
-            <tr class="leader"><td>1</td><td>Ricardo Méndez</td><td>10</td><td>7</td><td>2</td><td>1</td><td>+15</td><td>23</td></tr>
-            <tr><td>2</td><td>Atlético Juventud</td><td>10</td><td>6</td><td>2</td><td>2</td><td>+9</td><td>20</td></tr>
-            <tr><td>3</td><td>Deportivo Unión</td><td>10</td><td>5</td><td>3</td><td>2</td><td>+6</td><td>18</td></tr>
-          </tbody>
+          <tbody id="positionRows"></tbody>
         </table>
       </div>
     </section>
 
-    <section id="socios" class="section socios">
+    <section id="socios" class="section split">
       <div>
-        <div class="title"><h2>Registro de socios</h2></div>
-        <form>
-          <input placeholder="Nombre completo" />
-          <input placeholder="RUT" />
-          <input placeholder="Teléfono" />
-          <select><option>Socio activo</option><option>Jugador</option><option>Apoderado</option></select>
-          <button type="button">Guardar socio</button>
+        <div class="sectionHead">
+          <h2>Solicitud de socio</h2>
+          <p>El público puede enviar una solicitud. El administrador debe aprobarla antes de registrarla.</p>
+        </div>
+
+        <form id="memberRequestForm" class="formCard">
+          <input id="memberName" placeholder="Nombre completo" required>
+          <input id="memberRut" placeholder="RUT" required>
+          <input id="memberPhone" placeholder="Teléfono" required>
+          <select id="memberType">
+            <option>Socio activo</option>
+            <option>Jugador</option>
+            <option>Apoderado</option>
+            <option>Dirigente</option>
+          </select>
+          <button>Enviar solicitud</button>
         </form>
       </div>
-      <div class="panel">
-        <h3>Estado de socios</h3>
-        <p><b>Al día:</b> 198</p>
-        <p><b>Pendientes:</b> 48</p>
-        <p><b>Morosidad:</b> 19%</p>
-      </div>
-    </section>
 
-    <section id="estadisticas" class="section">
-      <div class="title"><h2>Estadísticas</h2></div>
-      <div class="bars">
-        <div><span style="height:85%"></span><p>Victorias</p></div>
-        <div><span style="height:35%"></span><p>Empates</p></div>
-        <div><span style="height:20%"></span><p>Derrotas</p></div>
-        <div><span style="height:95%"></span><p>Goles</p></div>
+      <div class="infoCard">
+        <h3>Control administrativo</h3>
+        <p>Las noticias, fotos, videos, fixture y socios quedan pendientes hasta aprobación del administrador.</p>
+        <p>Para uso real online se debe conectar a Supabase.</p>
       </div>
     </section>
   </main>
+
+  <div id="adminModal" class="modal">
+    <div class="modalBox">
+      <button class="close" id="closeAdmin">×</button>
+
+      <div id="loginPanel">
+        <h2>Acceso administrador</h2>
+        <p>Solo una persona autorizada puede publicar o aprobar información.</p>
+        <input id="adminPassword" type="password" placeholder="Clave administrador">
+        <button id="loginBtn">Ingresar</button>
+        <small>Clave demo: admin1932</small>
+      </div>
+
+      <div id="adminPanel" class="hidden">
+        <h2>Panel administrador</h2>
+
+        <div class="adminTabs">
+          <button data-tab="tabNoticias" class="tab active">Noticias</button>
+          <button data-tab="tabGaleria" class="tab">Fotos/Videos</button>
+          <button data-tab="tabFixture" class="tab">Fixture</button>
+          <button data-tab="tabSolicitudes" class="tab">Solicitudes</button>
+        </div>
+
+        <section id="tabNoticias" class="tabContent">
+          <h3>Cargar noticia</h3>
+          <input id="newsTitle" placeholder="Título">
+          <textarea id="newsText" placeholder="Información de la noticia"></textarea>
+          <button id="addNews">Publicar noticia</button>
+        </section>
+
+        <section id="tabGaleria" class="tabContent hidden">
+          <h3>Cargar foto o video</h3>
+          <input id="mediaTitle" placeholder="Título">
+          <input id="mediaUrl" placeholder="URL de imagen o video">
+          <select id="mediaType"><option>Foto</option><option>Video</option></select>
+          <button id="addMedia">Publicar en galería</button>
+        </section>
+
+        <section id="tabFixture" class="tabContent hidden">
+          <h3>Agregar partido</h3>
+          <input id="fxDate" placeholder="Fecha">
+          <input id="fxSerie" placeholder="Serie">
+          <input id="fxGame" placeholder="Partido">
+          <input id="fxPlace" placeholder="Cancha">
+          <input id="fxHour" placeholder="Hora">
+          <button id="addFixture">Guardar partido</button>
+        </section>
+
+        <section id="tabSolicitudes" class="tabContent hidden">
+          <h3>Solicitudes pendientes</h3>
+          <div id="requestList"></div>
+        </section>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
